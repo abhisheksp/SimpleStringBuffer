@@ -13,14 +13,6 @@ public class SimpleStringBuffer {
     public SimpleStringBuffer() {
     }
 
-    @Override
-    public String toString() {
-        if (content != null) {
-            return new String(content);
-        }
-        return "";
-    }
-
     public void append(String stringToAppend) {
         if (stringToAppend.length() > 0) {
             int lastPosition = this.content.length;
@@ -29,5 +21,13 @@ public class SimpleStringBuffer {
                 this.content[i] = stringToAppend.charAt(i - lastPosition);
             }
         }
+    }
+
+    @Override
+    public String toString() {
+        if (content != null) {
+            return new String(content);
+        }
+        return "";
     }
 }
