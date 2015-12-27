@@ -63,4 +63,22 @@ public class SimpleStringBufferTest {
         assertEquals("AB", simpleStringBuffer.toString());
     }
 
+    @Test
+    public void shouldContainABWhenABIsPassedToAppendWhenInitialValueIsEmpty() {
+        SimpleStringBuffer simpleStringBuffer = new SimpleStringBuffer("");
+
+        simpleStringBuffer.append("AB");
+
+        assertEquals("AB", simpleStringBuffer.toString());
+    }
+
+    @Test
+    public void shouldContainABABWhenABIsPassedToAppendWhenInitialValueIsAB() {
+        SimpleStringBuffer simpleStringBuffer = new SimpleStringBuffer("AB");
+
+        simpleStringBuffer.append("AB");
+
+        assertEquals("ABAB", simpleStringBuffer.toString());
+    }
+
 }

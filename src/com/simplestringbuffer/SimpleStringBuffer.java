@@ -6,7 +6,7 @@ public class SimpleStringBuffer {
 
     private char[] content;
 
-    public SimpleStringBuffer(String initialContent ) {
+    public SimpleStringBuffer(String initialContent) {
         this.content = initialContent.toCharArray();
     }
 
@@ -15,17 +15,19 @@ public class SimpleStringBuffer {
 
     @Override
     public String toString() {
-        if(content != null) {
+        if (content != null) {
             return new String(content);
         }
         return "";
     }
 
     public void append(String stringToAppend) {
-        if(stringToAppend.length() > 0){
+        if (stringToAppend.length() > 0) {
             int lastPosition = this.content.length;
-            this.content = Arrays.copyOf(this.content, lastPosition+1);
-            this.content[lastPosition] = stringToAppend.charAt(0);
+            this.content = Arrays.copyOf(this.content, lastPosition + stringToAppend.length());
+            for (int i = lastPosition; i < content.length; i++) {
+                this.content[i] = stringToAppend.charAt(i - lastPosition);
+            }
         }
     }
 }
