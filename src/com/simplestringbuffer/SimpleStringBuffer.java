@@ -4,8 +4,8 @@ public class SimpleStringBuffer {
 
     private char[] content;
 
-    public SimpleStringBuffer(String intialContent ) {
-        this.content = intialContent.toCharArray();
+    public SimpleStringBuffer(String initialContent ) {
+        this.content = initialContent.toCharArray();
     }
 
     public SimpleStringBuffer() {
@@ -13,8 +13,13 @@ public class SimpleStringBuffer {
 
     @Override
     public String toString() {
-        if(content != null)
-            return "a";
+        if(content != null) {
+            return new String(content);
+        }
         return "";
+    }
+
+    public void append(String stringToAppend) {
+
     }
 }
