@@ -1,5 +1,7 @@
 package com.simplestringbuffer;
 
+import java.util.Arrays;
+
 public class SimpleStringBuffer {
 
     private char[] content;
@@ -20,6 +22,10 @@ public class SimpleStringBuffer {
     }
 
     public void append(String stringToAppend) {
-
+        if(stringToAppend.length() > 0){
+            int lastPosition = this.content.length;
+            this.content = Arrays.copyOf(this.content, lastPosition+1);
+            this.content[lastPosition] = stringToAppend.charAt(0);
+        }
     }
 }

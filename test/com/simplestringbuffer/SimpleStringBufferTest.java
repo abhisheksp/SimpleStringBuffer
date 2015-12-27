@@ -36,4 +36,31 @@ public class SimpleStringBufferTest {
         assertEquals("", simpleStringBuffer.toString());
     }
 
+    @Test
+    public void shouldContainAWhenEmptyStringIsPassedToAppendWhenInitialValueIsA() {
+        SimpleStringBuffer simpleStringBuffer = new SimpleStringBuffer("A");
+
+        simpleStringBuffer.append("");
+
+        assertEquals("A", simpleStringBuffer.toString());
+    }
+
+    @Test
+    public void shouldContainAWhenAIsPassedToAppendWhenInitialValueIsEmpty() {
+        SimpleStringBuffer simpleStringBuffer = new SimpleStringBuffer("");
+
+        simpleStringBuffer.append("A");
+
+        assertEquals("A", simpleStringBuffer.toString());
+    }
+
+    @Test
+    public void shouldContainABWhenBIsPassedToAppendWhenInitialValueIsA() {
+        SimpleStringBuffer simpleStringBuffer = new SimpleStringBuffer("A");
+
+        simpleStringBuffer.append("B");
+
+        assertEquals("AB", simpleStringBuffer.toString());
+    }
+
 }
